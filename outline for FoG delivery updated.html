@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Layout for delivery</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+<style>
+
+/*@ instructions */
+
+@media print{
+  body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+  #ad{ display:none;}
+  #leftbar{ display:none;}
+  #contentarea{ width:100%;}
+  
+  .print {
+   display: block;
+  }
+  
+}
+
+/*polygons*/
+
+.clip-left { 
+clip-path: polygon(25% 12%, 80% 12%, 85% 0%,90% 12%, 100% 12%, 100% 88%, 25% 88%, 0% 50%);
+background: #EA6400 ;
+max-width: 400px;
+height: 300px;
+margin: auto;
+font-family: Arial, sans-serif;
+font-size: 105%;
+padding-top:70px;
+padding-left:80px;
+padding-right:5px;
+box-sizing: border-box;
+}
+
+.clip-right { 
+clip-path: polygon(75% 88%, 20% 88%, 15% 100%,10% 88%, 0% 88%, 0% 12%, 75% 12%, 100% 50%);
+background: #05f1da ;
+max-width: 400px;
+height: 300px;
+margin: auto;
+font-family: Arial, sans-serif;
+font-size: 105%;
+padding-right:80px;
+padding-left:5px;
+padding-top:70px;
+box-sizing: border-box;
+}
+
+.arrow-right {
+clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+height: 20px;
+max-width: 30px; 
+background: white ;
+}
+
+.hollow-frame {
+clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 8%, 92% 8%, 92% 92%, 8% 92%, 8% 100%, 100% 100%, 100% 0%);
+background: #05f1da ;
+}
+
+.hollow-frame #smaller{
+clip-path: polygon(0% 0%, 0% 100%, 8% 100%, 8% 8%, 92% 8%, 92% 92%, 8% 92%, 8% 100%, 100% 100%, 100% 0%);
+background: #05f1da ;
+/* shrink */
+}
+
+
+
+/* images */
+div.img-right-bottom {right: 5px;
+    bottom: 5px;
+    position:relative;}
+.conundrum-img {
+   
+    right: 5px;
+    bottom: 5px;
+    max-width:100px; 
+}
+
+/* settings for .print classed elements (can be used for the .child-conundrums text which could be extracted with javascript)*/
+.print {
+  display: none;
+}
+/* panel */
+
+div.w3-panel {
+  max-width: 800px;
+  margin: auto;
+ /* border: 0.4pt solid #CCC; */
+}
+
+/* attributes for text*/
+
+p {
+  font-family: Arial, sans-serif;
+    margin-left: 30px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 10px; /* between paragraphs */
+}
+
+h1 {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 span {
+  background: #EA6400 ;
+  display:inline-block;
+}
+
+h2 {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: auto;
+}
+
+
+div.main-points {
+  max-width: 750px;
+  margin: auto;
+  border: 0.4pt solid #CCC;
+  background-color: #05f1da ; 
+  padding: 2%;
+ }
+ 
+div.main-points p {
+  margin-bottom: 15px; /* between paragraphs */
+}
+
+div.sub-title {
+  font-family: Arial, sans-serif;
+    margin-left: 30px;
+    /*max-width: 800px;*/
+    margin: auto;
+    margin-bottom: 10px; /* between paragraphs */
+  font-style: italic;
+  color: white;
+  padding: 5px;
+  scroll-snap-type: y proximity; /* move to a separate class!! */
+}
+
+div.sub-title span {
+  background: #EA6400 ;
+  display:inline-block;
+}
+
+div.sub-title-green span {
+  background:#05f1da ;
+  display:inline-block;
+  text-align: right;
+    font-style: italic;
+  color: white;
+  padding: 5px;
+  
+}
+
+div.main-title {
+  font-family: Arial, sans-serif;
+    margin-left: 30px;
+    /*max-width: 800px;*/
+    margin: auto;
+    margin-bottom: 20px; /* between paragraphs */
+    padding: 5px;
+    font-style: italic bold;
+    color: white;
+}
+
+div.viz-text {
+  max-width: 600px;
+  margin: auto;
+  font-style: italic;
+  font-size 80%
+  color: 	#A9A9A9 ;
+  /* border: 0.4pt solid #CCC; */
+}
+
+div.conundrum-quote { 
+background: #de058b ; 
+color: white !important ;
+font-size: 120% ;
+margin-bottom: 10px;
+margin-top: 10px; 
+}
+
+.white-text {
+color: white !important ;
+}
+
+/* aref attributes */
+
+a, a:hover, a:active, a:visited {
+color: white; 
+}
+
+a.orange span {
+background: #EA6400 ;
+}
+
+
+/* button attributes */
+.button {
+  display: inline-block;
+  color: white;
+  background-color: #05f1da ;
+  font-family: Arial, sans-serif;
+  font-style: italic bold;
+  /*padding: 5px;*/
+  border: solid 5px #05f1da;
+}
+
+.button-container {
+  text-align: center;
+  padding: 5px;
+    max-width: 800px;
+  margin: auto;
+}
+
+.button-big {
+font-size: 120% ; 
+margin-bottom: 2px;
+text-decoration-line : underline; 
+}
+
+button:hover {
+  background-color: #EA6400 ;
+  color: black;
+}
+button:active {
+  background-color: #EA6400 ;
+  color: black;
+}
+div.button-go-up {
+    margin-bottom: 30px; 
+    font-family: Arial, sans-serif;
+    padding: 5px;
+}
+
+div.button-go-up span {
+  background: #EA6400 ;
+  display:inline-block;
+  font-style: italic bold;
+}
+
+
+/*apply attributes to classes used in the conundrums section */
+
+.container-conundrums {
+  scroll-snap-type: x mandatory;
+  min-width: 50vw;
+  max-width: 600px;
+  margin: auto; padding: 3% ; 
+  display: flex;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: scroll;
+  border: 4px solid #05f1da ;
+}
+
+.child-conundrums {
+  scroll-snap-align: start;
+  	border-right: 4px solid #05f1da;
+	padding: 1rem;
+	min-width: 50vw;
+    max-width: 600px;
+    min-height: 300px;
+     max-height: 500px;
+	/*height: 100vh;*/
+}
+
+/* other attributes */
+
+
+ul {
+  list-style-image: url('https://ibb.co/5nrtF4r'); 
+  /* needs work. this is the FoG logo */
+}
+
+.conundrum-img {
+  width: 50%;
+  position: absolute;
+  right: 10px;
+  bottom:10px;
+}
+
+
+
+div.video-wrapper {
+margin: 0 auto; 
+display: flex ; 
+min-width: 400px; 
+  border: 5px solid #05F1DA;
+  padding-top: 18px;
+}
+
+div.viz {
+  border: 2px solid #05F1DA;
+}
+
+/*   */
+iframe {justify-content: center; vertical-align: center; } 
+
+.icon, .icon:before, .icon:after, .icon i, .icon i:before, .icon i:after { 
+  transition: all 0.4s ease;
+}
+
+/*apply attributes to htm ids */
+#top { 
+background: #EA6400 ; font-family: Arial, sans-serif; padding: 5px;
+}
+/*
+
+#world-show:target, #lac-show:target, #ssa-show:target, #eca-show:target {
+  display: block;
+}
+ #world-show, #lac-show, #ssa-show, #eca-show {
+  display: none;
+}
+*/
+
+#con1,#con6,#con11,#con16  {
+background-color: #de058b ;
+}
+
+</style>
+
+
+
+</head>
+<! -- insert changelog here. Alasdair Fraser,17 feb 2022 - drafted page. V2 covers a tab design at the top of the page. -->
+<body>
+<p>All text and other content is in preliminary draft form, and none of the contents represents the views of the World Bank or any other party. Please do not cite.</p>
+<p>
+<h2>The Future of Government: How to deliver it?</h2>
+</p>
+<div class="w3-panel">
+<div class="button-go-up"><span>
+<a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Back to main page</a></span></div>
+</div>
+<a name="top"></a>
+
+<div class="show-hide-buttons-region">
+<! -- currently empty. Would affect whole page. -->
+</div>
+
+<div class="button-container">
+
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'theme-home')">The past versus the future</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'bttf')">Back to the Future</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'journey')">The Journey</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'candc')">Choices and Conundrums</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Stories</button>
+
+</div>
+<!--Front section-->
+<div id="theme-home" class="tab" >
+<div class="main-title">
+<p><h1><span>The past vs the future</span></h1></p>
+
+</div>
+<p><b>
+“Delivery” </b> is about how a government actually implements its policies.
+</p>
+
+<div class="sub-title">
+<p><span>The government of the past...</span></p>
+</div>
+<div class="clip-left"><p>…continues to look inwards, motivated by power and bureaucratic interests, an agenda to invest in new rather than existing delivery, and loses sight of the beneficiaries. </p><p> This ultimately means that the quality of government delivery continues to stagnate. </p></div>
+
+<div class="sub-title-green" style"text-align: right">
+<p><span>The government of the future...</span></p>
+</div>
+<div class="clip-right"><p>...with a clear focus on the objective and the citizen, rethinks how they deliver - whether directly, in partnership or through regulation – and who drives, incentivizes and ensures delivery. </p><p>In doing so, it unlocks and builds new capability and collaboration and ensures quality and equity in what is delivered. </p></div>
+</div>
+</div>
+<!--Back to the future section-->
+<div id="bttf" class="tab" style="display:none">
+
+<div class="main-title">
+<p><h1><span>Back to the future</span></h1></p>
+</div>
+
+
+<p>
+Between 2000 and 2019, governments have often delivered better results for citizens. Achievements included providing expanded access to education; better health outcomes and longer life expectancy. Regulatory successes included macroeconomic policy; authorising competitive mobile telephony; and learning from the 2008 global financial crisis to prevent financial collapse in 2020. </p>
+<p>Yet popular satisfaction with a wide range of public services fell on average in Africa and LAC. The 2008 global financial crisis which heralded a slowdown in economic and social progress. But even before that, many governments have failed to deliver in many areas where they promised change. These include enabling improvements in the quality and quality of jobs, taming inequality (particularly in high-income countries), and meaningfully addressing climate change. Outside of a few countries, access to sanitation, electricity and water showed lackluster progress. </p> <p>Are governments getting better at implementing their undertakings? Why - and why not?
+</p>
+
+<div class="sub-title">
+<p><span>Symptoms of strong and weak delivery </span></p>
+</div>
+
+<div class="w3-panel" class="viz" id="viz-1">
+<!--Toggle visualizations-->
+<div class="button-container">
+  <button class="w3-bar-item button graphlink" onclick="openGraph(event,'world-show')">World</button>
+  <button class="w3-bar-item button graphlink" onclick="openGraph(event,'lac-show')">LAC</button>
+  <button class="w3-bar-item button graphlink" onclick="openGraph(event,'ssa-show')">SSA</button>
+  <button class="w3-bar-item button graphlink" onclick="openGraph(event,'eca-show')">ECA</button>
+</div>
+<!--World style="display:block" -->
+<div class="graph" id="world-show">
+    <p class="flourish-world" id="worldContent">
+    <div class="flourish-embed" data-src="visualisation/8678740"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </p>
+</div>
+
+<!--LAC-->
+<div class="graph" id="lac-show" style="display:none">
+    <div class="viz-text"><p>In LAC, most governments worsened on this expert measure of educational equity. However, in line with income inequality, service inequality often narrowed in LAC and SSA. Big declines in LAC and the Middle East were not always coincident with wholesale state failure in the form of civil war.</p></div>
+    <p class="flourish-lac" id="lacContent">
+    <div class="flourish-embed" data-src="visualisation/8736522"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </p>
+</div>
+
+<!--SSA-->
+<div class="graph" id="ssa-show" style="display:none">
+    <div class="viz-text"><p>SSA did better than much of the world, but from a lower starting point. </p></div>
+    <p class="flourish-ssa" id="ssaContent">
+    <div class="flourish-embed" data-src="visualisation/8736665"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </p>
+</div>
+
+
+<div class="graph" id="eca-show" style="display:none">
+    <div class="viz-text"><p>But erosion of service equity has affected Europe and Central Asia most of all, perhaps due to post-GFC cutbacks. 
+    </p></div>
+    <p class="flourish-eca" id="ecaContent">
+    <div class="flourish-embed" data-src="visualisation/8736665"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </p>
+</div>
+</div>
+
+<div class="sub-title">
+<p><span>Directly observing delivery</span></p>
+</div>
+<p>
+One direct measure of delivery (“implementation”) suggests diverse experiences regionally.
+</p>
+<div class="viz-text"><p>Use the arrows on the graph below to show overall progress across [145] countries, as well as the biggest improvers and deteriorations. Individual countries' progress is shown on the final graph. </p></div>
+<div class="w3-panel" class="viz">
+<div class="flourish-embed" data-src="story/1140551"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+</div>
+<p> To ADD: QUALITY</p>
+<div class="sub-title">
+<p><span>
+Conditions for delivery</span></p>
+</div>
+<p>
+Often, incentive structures and norms affect the scope for government to achieve against undertakings. In the <a href="#viz-1" class="orange"><span>first graph<span></a> - on changes between 2000 and 2020 on delivering equitable services- , the direction of change in health and education inequality were often different within the same country.  
+</p>
+<p>
+Incentives and achievements differ across sectors. In the judicial sector, judicial independence is a desirable outcome of a “developmentalist” government in most contexts. But actual behavior against the government’s own legislation often falls well short of ambitions set in legislation by governments and other actors. Similar patterns have been found in several policy areas, including public financial management. However, government audit functions do considerably better, and sectors with a smaller role for the government often exhibit autonomy and freedom beyond that provided by government regulations. 
+</p>
+<div class="sub-title">
+<p><span>
+Is it the non-state sector? </span></p>
+</div>
+<p>
+<div class="w3-panel">
+
+<a href="#top"><span>Back to top</span></a>
+</div>
+</div>
+<!-- The journey-->
+<div id="journey" class="tab" style="display:none">
+<div class="w3-panel">
+<div class="main-title">
+<p><h1><span>The journey</span></h1></p>
+</div>
+<p>How governments get to better delivery.</p>
+<p>Video is from another theme and is added as an example</p>
+<div class="video-wrapper" > 
+<p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+</div>
+</div>
+</div>
+
+<!--Choices and conundrums-->
+<div id="candc" class="tab" style="display:none">
+    <div class="w3-panel">
+        <div class="main-title">
+        <p><h1><span>Choices and conundrums</span></h1></p>
+        </div>
+    <p>While trying to improve delivery, governments face <b>a series of tradeoffs and problems to address.</b></p>
+    <p>Note that the panel below could be expanded to take the entire screen with the navigation tools redrawn at the top or side of the page. The arrows currently are not clickable but could be.</p>
+    
+    <div class="container-conundrums">
+
+        <section class="child-conundrums" id="con1" ><h1 class="white-text">Delivery through regulation and influencing.</h1>
+            <p></p>
+  
+            <div class="img-right-bottom"><a data-flickr-embed="true" href="https://www.flickr.com/photos/worldbank/19846967539/in/album-72157649173120547/" title="Children raises their hands"><img src="https://live.staticflickr.com/286/19846967539_098e4dd6e9_n.jpg" width="320" height="213" alt="Children raises their hands" ></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script></div>
+  
+            <div class="arrow-right"><p></p>
+            </div>
+        </section>
+  
+        <section class="child-conundrums" id="con2"><h1>Coherent, realistic regulation. </h1>
+            <p> Good regulation is difficult to do and the definition of good regulation is highly contested. </p> 
+                <p>Regulations are often patchy. Poor regulation can be more trouble than its worth, and regulation can provide another way for corrupt officials to extract rent.  It is difficult to sustain government attention or adapt to experience. The temptation to announce what cannot be implemented, and to favor some groups according to political circumstances are all risks for regulation, just as they are for direct provision.  </p> <p></p>
+               <p> <div class="conundrum-quote">[appropriate version of]"All governments lie, but disaster lies in wait for countries whose officials smoke the same hashish they give out." - I.F. Stone, Journalist</div></p> <p></p>
+                <p>But some governments are better at regulation than they are at provision. Better regulation, particularly to authorise and to enable beneficial private activities, but also to protect the vulnerable from the excess of private activities, is an opportunity for governments to improve people's lives during tight fiscal conditions. Quality and not just the quantity of </p>
+        </section>
+  
+        <section class="child-conundrums" id="con3"><h1>Enforcement, or influencing and cajoling</h1>
+            <p>Often, to get something done, governments need changes from citizens and non-state actors. They might rope in communities to support government interventions through cooperative action, co-financing, monitoring government employees' actions. .</p>
+            <p> Alternatively, and often more effectively, governments can cajole changes in behavior through providing information to and making non-binding requests of citizens. <p>Often the government cajoles, provides AND coerces. Examples include campaigns against smoking, where citizens are encouraged by a combination of government measures (such as tax, advertising and subsidised treatment) to stop. Governments with less experience of policy coherence, and perhaps those governments who do not make a conscious effort to deliver across bureaucratic silos, will struggle to act across several modes. </p>
+        </section>
+  
+        <section class="child-conundrums" id="con4"><h1>Self-regulation among government workers and leaders might help establish the legitimacy required to influence or cajole. </h1>
+            <p> An important public good is the government’s role in influencing wider societal norms by setting an example through the conduct and selection of government workers or a demonstration of self-restraint. This influences the environment and scope for effective implementation. </p></section>
+  
+        <section class="child-conundrums" id="con5"><h1>Governments can directly intervene, or they can contract the private and third sectors. </h1>
+               <p> Delivering government interventions through the third and private sector might allow more focus on delivery and implementation. Outside the government, employers might have more freedom to motivate and discipline staff. </p>
+               <p>But downsides include higher costs of capital, the costs of managing monopolistic rents; and less flexibility for governments to change resourcing or programming during a contract. </p>
+               <p>Private provision on behalf of the state may result in less clarity for citizens in terms of who is responsible  - and less scope to hold service providers to account. </p>
+               <p>Often, the private sector and the governing elite are tightly connected (they might be members of the same family). The actual people doing the frontline work are likely to be the same people regardless of delivery mode, particularly if that frontline work requires scarce skills or qualifications. </p>
+                <p>Sometimes, the ‘innovation’ that outsourcing provides, is simply to pay frontline staff less. Contracting-out may be an expensive way to achieve this, and reducing employment quality might have consequences for service quality and wider cohesion. </p>
+        </section>
+
+        <section class="child-conundrums" id="con6" ><h1 class="white-text">Who delivers?</h1>
+            <p></p>
+            <div class="arrow-right"><p></p>
+            </div>
+        </section>
+
+        <section class="child-conundrums" id="con7"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con8"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con9"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con10"><h1></h1>
+            <p> </p>
+        </section>  
+  
+        <section class="child-conundrums" id="con11" ><h1 class="white-text">What level of government can deliver?</h1>
+            <p></p>
+            <div class="arrow-right"><p></p>
+        </div></section>
+
+        <section class="child-conundrums" id="con12"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con13"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con14"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con15"><h1></h1>
+            <p> </p>
+        </section>
+ 
+        <section class="child-conundrums" id="con16" ><h1 class="white-text">How does delivery happen?</h1>
+            <p></p>
+            <div class="arrow-right"><p></p>
+            </div>
+        </section>
+ 
+        <section class="child-conundrums" id="con17"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con18"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con19"><h1></h1>
+            <p> </p>
+        </section>
+
+        <section class="child-conundrums" id="con20"><h1></h1>
+            <p> </p>
+        </section>
+  
+    </div>
+    </div>
+</div>
+
+<!--Stories-->
+<div id="story" class="tab" style="display:none">
+    <div class="w3-panel">
+        <div class="main-title">
+            <p><h1><span>Stories</span></h1></p>
+        </div>
+    <p>Stories text to be devised</p>
+    </div>
+</div>
+<!--image-->
+<img src="https://i.ibb.co/F3Z68x0/wbfoglogo-1.png" alt="wbfoglogo-1" class="conundrum-img">
+
+<!--java-->
+<script>
+/* not currently in use*/
+$('.arrow-right').click(function(){
+  $(this)
+        .scrollLeft()
+})
+/* show/hide tabs*/
+function openTab(evt, tabName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-selected", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " w3-selected";
+}
+/* show/hide graphs for regions or other cuts*/
+function openGraph(evt, graphName) {
+  var i, x, graphlinks;
+  x = document.getElementsByClassName("graph");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  graphlinks = document.getElementsByClassName("graphlink");
+  for (i = 0; i < x.length; i++) {
+    graphlinks[i].className = graphlinks[i].className.replace(" w3-selected", "");
+  }
+  document.getElementById(graphName).style.display = "block";
+  evt.currentTarget.className += " w3-selected";
+}
+
+</script> 
+</body>
+</html>
