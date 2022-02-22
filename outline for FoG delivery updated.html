@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Layout for delivery</title>
+<title>FoG - delivery</title>
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 <style>
 
@@ -180,7 +180,7 @@ div.viz-text {
   /* border: 0.4pt solid #CCC; */
 }
 
-div.conundrum-quote { 
+div.conundrum-quote span{ 
 background: #de058b ; 
 color: white !important ;
 font-size: 120% ;
@@ -202,8 +202,26 @@ color: white;
 a.orange span {
 background: #EA6400 ;
 }
-
-
+/* panel */
+div.navpanel-1,
+    p.flip {
+        margin: 0px;
+        padding: 5px;
+        margin: auto; 
+        font-family: Arial, sans-serif;
+        text-align: center;
+        background: #05F1DA;
+        border: solid 2px #05F1DA;
+    }
+    
+    div.navpanel-1 {
+        min-width: 50vw;
+        max-width: 600px;
+        height: 100px;
+        display: none;
+        background: white;
+    }
+    
 /* button attributes */
 .button {
   display: inline-block;
@@ -352,14 +370,26 @@ background-color: #de058b ;
 
 </head>
 <! -- insert changelog here. Alasdair Fraser,17 feb 2022 - drafted page. V2 covers a tab design at the top of the page. -->
+<! -- insert changelog here. Alasdair Fraser,17 feb 2022 - added content. V3 adds a navigation tool at the top of the page. -->
 <body>
-<p>All text and other content is in preliminary draft form, and none of the contents represents the views of the World Bank or any other party. Please do not cite.</p>
+    <p class="flip">Menu</p>
+    <div class="navpanel-1">
+    <div class="close-panel"></div>
+    <div class="button-main-menu"><span>
+<a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Back to main page</a></span></div>
+    
+    <div class="button-main-menu"><span>
+<a href="#top">What role?</a></span></div>
+</div>
+    </div>
+    <br>
+    <div class="w3-panel">
+<p>All text and other content is in preliminary draft form, and none of the contents represents the views of the World Bank or any other party. Please do not cite.</p></div>
 <p>
 <h2>The Future of Government: How to deliver it?</h2>
 </p>
 <div class="w3-panel">
-<div class="button-go-up"><span>
-<a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Back to main page</a></span></div>
+
 </div>
 <a name="top"></a>
 
@@ -373,7 +403,7 @@ background-color: #de058b ;
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'bttf')">Back to the Future</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'journey')">The Journey</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'candc')">Choices and Conundrums</button>
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Stories</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Cases and Conversations</button>
 
 </div>
 <!--Front section-->
@@ -406,8 +436,8 @@ background-color: #de058b ;
 
 
 <p>
-Between 2000 and 2019, governments have often delivered better results for citizens. Achievements included providing expanded access to education; better health outcomes and longer life expectancy. Regulatory successes included macroeconomic policy; authorising competitive mobile telephony; and learning from the 2008 global financial crisis to prevent financial collapse in 2020. </p>
-<p>Yet popular satisfaction with a wide range of public services fell on average in Africa and LAC. The 2008 global financial crisis which heralded a slowdown in economic and social progress. But even before that, many governments have failed to deliver in many areas where they promised change. These include enabling improvements in the quality and quality of jobs, taming inequality (particularly in high-income countries), and meaningfully addressing climate change. Outside of a few countries, access to sanitation, electricity and water showed lackluster progress. </p> <p>Are governments getting better at implementing their undertakings? Why - and why not?
+<b>Between 2000 and 2019, governments have often delivered better results for citizens. </b>Achievements included providing expanded access to education; better health outcomes and longer life expectancy. Regulatory successes included macroeconomic policy; authorising competitive mobile telephony; and learning from the 2008 global financial crisis to prevent financial collapse in 2020. </p>
+<p><b>Yet popular satisfaction with a wide range of public services fell on average in Africa and LAC.</b> The 2008 global financial crisis which heralded a slowdown in economic and social progress. But even before that, many governments have failed to deliver in many areas where they promised change. These include enabling improvements in the quality and quality of jobs, taming inequality (particularly in high-income countries), and meaningfully addressing climate change. Outside of a few countries, access to sanitation, electricity and water showed lackluster progress. </p> <p><b>Are governments getting better at implementing their undertakings? Why - and why not?</b>
 </p>
 
 <div class="sub-title">
@@ -498,15 +528,15 @@ Is it the fault of the non-state sector? </span></p>
 <p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 </div>
-<p>Perspectives from our panelists.</p>
+<p>Perspectives from our panelists</p>
 
 <div class="container-journeys">
 
         <section class="child-journeys" id="jo1" ><h1 class="white-text">George Werner, former Minister for Education in Liberia</h1>
             <p>picture</p>
-            <p>“Given very tight resources, governments [in FCAS and LICs] cannot deliver alone [so they must act through] co-delivery with communities” [...] “[You need] government intervention where you want to ensure equity across the board.”  </p>
-            <p>There is no way you can innovate without disrupting the status quo. You have to convince yourself as a public administrator that you cannot respond as usual... look at the health sector, where we disrupted regulations to come up with vaccines in no time. [...] Yet there is controversy when you want to improve learning outcomes. [Education] is politicized in a different way than health ...” </p>
-            <p>There isn’t much time for decisionmakers to make bold decisions in government. I was lucky to have political leadership in the process. In West Africa there are public-private partnerships including in Ghana. In government, we need to identify and negotiate with change agents. In education, measurement and change takes time, and you can’t point to a physical bridge that you built within a political cycle. </p>
+            <p><b>“Given very tight resources, governments cannot deliver alone [so they must act through] co-delivery with communities”</b> [...] “[You need] government intervention where you want to ensure equity across the board.”  </p>
+            <p><b>“There is no way you can innovate without disrupting the status quo.</b> You have to convince yourself as a public administrator that you cannot respond as usual... look at the health sector, where we disrupted regulations to come up with vaccines in no time. [...] Yet there is controversy when you want to improve learning outcomes. [Education] is politicized in a different way than health ...” </p>
+            <p><b>There isn’t much time for decisionmakers to make bold decisions in government.</b> I was lucky to have political leadership in the process. In West Africa there are public-private partnerships including in Ghana. In government, we need to identify and negotiate with change agents. In education, measurement and change takes time, and you can’t point to a physical bridge that you built within a political cycle. </p>
             <div class="arrow-right"><p></p>
             </div>
         </section>
@@ -553,7 +583,7 @@ Is it the fault of the non-state sector? </span></p>
         <section class="child-conundrums" id="con2"><h1>Coherent, realistic regulation. </h1>
             <p> Good regulation is difficult to do and the definition of good regulation is highly contested. </p> 
                 <p>Regulations are often patchy. Poor regulation can be more trouble than its worth, and regulation can provide another way for corrupt officials to extract rent.  It is difficult to sustain government attention or adapt to experience. The temptation to announce what cannot be implemented, and to favor some groups according to political circumstances are all risks for regulation, just as they are for direct provision.  </p> <p></p>
-               <p> <div class="conundrum-quote">[appropriate version of]"All governments lie, but disaster lies in wait for countries whose officials smoke the same hashish they give out." - I.F. Stone, Journalist</div></p> <p></p>
+               <p> <div class="conundrum-quote">[appropriate version of]"<span>All governments lie, but disaster lies in wait for countries whose officials smoke the same hashish they give out." - I.F. Stone, Journalist</span></div></p> <p></p>
                 <p>But some governments are better at regulation than they are at provision. Better regulation, particularly to authorise and to enable beneficial private activities, but also to protect the vulnerable from the excess of private activities, is an opportunity for governments to improve people's lives during tight fiscal conditions. Quality and not just the quantity of </p>
         </section>
   
@@ -689,7 +719,13 @@ function openGraph(evt, graphName) {
   document.getElementById(graphName).style.display = "block";
   evt.currentTarget.className += " w3-selected";
 }
-
+/* navigation panel*/
+    $(document).ready(function() {
+        $(".flip").click(function() {
+            $(".navpanel-1").slideToggle("slow");
+        });
+    });
+    
 </script> 
 </body>
 </html>
