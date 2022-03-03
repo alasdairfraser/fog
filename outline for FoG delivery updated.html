@@ -29,10 +29,10 @@ max-width: 400px;
 height: 300px;
 margin: auto;
 font-family: Arial, sans-serif;
-font-size: 105%;
+font-size: 105%; 
 padding-top:70px;
 padding-left:80px;
-padding-right:5px;
+padding-right:5px; 
 box-sizing: border-box;
 }
 
@@ -46,7 +46,7 @@ font-family: Arial, sans-serif;
 font-size: 105%;
 padding-right:80px;
 padding-left:5px;
-padding-top:70px;
+padding-top:70px; 
 box-sizing: border-box;
 }
 
@@ -68,7 +68,10 @@ background: #05f1da ;
 /* shrink */
 }
 
-
+.wrapper-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 
 /* images */
 div.img-right-bottom {right: 5px;
@@ -191,6 +194,17 @@ font-family: Arial, sans-serif;
 
 .white-text {
 color: white !important ;
+}
+
+
+.row {
+  display: flex;
+  margin:auto;
+}
+
+.column {
+  flex: 50%;
+  max-width: 35vw;
 }
 
 /* aref attributes */
@@ -393,19 +407,20 @@ background-color: #de058b ;
 </head>
 <! -- insert changelog here. Alasdair Fraser,17 feb 2022 - drafted page. V2 covers a tab design at the top of the page. -->
 <! -- insert changelog here. Alasdair Fraser,17 feb 2022 - added content. V3 adds a navigation tool at the top of the page. -->
+<! -- insert changelog here. Alasdair Fraser,17 feb 2022 - added content. V4 limits the number of tabs. -->
 <body>
     
-    <p class="flip">Menu [not currently opening with touch on iOS. Buttons not linked to targets yet]</p>
+    <p class="flip">Menu - This element would be supplanted by the main navigation on the program page.</p>
     <div class="navpanel-1">
     <div class="close-panel"></div>
     <!-- make button -->
     <div class="button-container">
     <!-- insert links when ready-->
-        <div class="button-main-menu"><span><a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Back to main page</a></span></div>  
+        <div class="button-main-menu"><span><a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Main page</a></span></div>  
         <div class="button-main-menu"><span><a href="#top">Role</a></span></div>
         <div class="button-main-menu"><span><a href="#top">Productivity</a></span></div>
         <div class="button-main-menu"><span><a href="#top">Delivery</a></span></div>
-        <div class="button-main-menu"><span><a href="#top">Trust</a></span></div><p><span></span>Other buttons. This could be on the right or LHS.</p>
+        <div class="button-main-menu"><span><a href="#top">Trust</a></span></div><p><span></span>Can be on left, but reduces "columns" for the rest of the content.</p>
     </div>
     </div>
     <br>
@@ -420,37 +435,59 @@ background-color: #de058b ;
 <a name="top"></a>
 
 <div class="show-hide-buttons-region">
-<! -- currently empty. Would affect whole page. -->
+<! -- currently empty. Could affect whole page. -->
 </div>
-
+<p class="flip">Second-level menu - This element would be supplanted by the second level of navigation on the program page.</p>
+    <div class="navpanel-1">
+    <div class="close-panel"></div>
 <div class="button-container">
 
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'theme-home')">The past versus the future</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'theme-home')">The Journey</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'bttf')">Back to the Future</button>
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'journey')">The Journey</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Conversations and Cases</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'candc')">Choices and Conundrums</button>
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Cases and Conversations</button>
 
+</div>
 </div>
 <!--Front section-->
 <div id="theme-home" class="tab" >
 <div class="main-title">
-<p><h1><span>The past vs the future</span></h1></p>
+<p><h1><span>Delivery: the journey</span></h1></p>
 
 </div>
 <p><b>
-“Delivery” </b> is about how a government actually implements its policies.
+“Delivery” </b>
+is about how a government actually implements its policies.
 </p>
-
+<div id="column-centre" style="   width: 959px; margin: 0 auto; "><div class="row">
+  <div class="column">
 <div class="sub-title">
 <p><span>The government of the past...</span></p>
 </div>
 <div class="clip-left"><p>…continues to look inwards, motivated by power and bureaucratic interests, an agenda to invest in new rather than existing delivery, and loses sight of the beneficiaries. </p><p> This ultimately means that the quality of government delivery continues to stagnate. </p></div>
 
+</div>
+  <div class="column">
+
 <div class="sub-title-green" style"text-align: right">
 <p><span>The government of the future...</span></p>
 </div>
 <div class="clip-right"><p>...with a clear focus on the objective and the citizen, rethinks how they deliver - whether directly, in partnership or through regulation – and who drives, incentivizes and ensures delivery. </p><p>In doing so, it unlocks and builds new capability and collaboration and ensures quality and equity in what is delivered. </p></div>
+</div>
+</div>
+</div>
+<p>How governments get to better delivery.</p>
+<p>Video is from another theme. The video placed here will be based on an extract of the cartoon.</p>
+<div class="video-wrapper" > 
+<p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+</div>
+<div class="make-your-own-choices" id="choices-objectives" style="display:none"> <p></p>
+<p><h2">Interactive game</h2> is from another theme (setting objectives) and is added as an example.</p><p></p>
+
+  <script async type="text/javascript"> !function () { if (window.JOONBOT_WIDGET_ID) { console.warn("Joonbot snippet included twice"); } else { window.JOONBOT_MODE = "embed"; window.JOONBOT_WIDGET_ID = "42ee6d81-e0bf-4c05-9baa-22af65d5e6db"; var n, o; o = document.createElement("script"); o.src = "https://js.joonbot.com/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous"; n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n); } }() </script> <div id="joonbot-embed" style="background-color:lightgrey;width: 550px; height: 300px; border: 4px solid #05f1da ; margin: auto;"></div>
+  
+</div>
 </div>
 </div>
 <!--Back to the future section-->
@@ -487,7 +524,7 @@ background-color: #de058b ;
 
 <!--LAC-->
 <div class="graph" id="lac-show" style="display:none">
-    <div class="viz-text"><p>In LAC, most governments worsened on this expert measure of educational equity. However, in line with income inequality, service inequality often narrowed in LAC and SSA. Big declines in LAC and the Middle East were not always coincident with wholesale state failure in the form of civil war.</p></div>
+    <div class="viz-text"><p>In LAC, most governments worsened on this expert measure of educational equity. However, in line with income inequality, service inequality often narrowed in LAC and SSA. Large declines in LAC and the Middle East were not always coincident with wholesale state failure in the form of civil war.</p></div>
     <p class="flourish-lac" id="lacContent">
     <div class="flourish-embed" data-src="visualisation/8736522"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
     </p>
@@ -542,55 +579,7 @@ Is it the fault of the non-state sector? </span></p>
 <a href="#top"><span>Back to top</span></a>
 </div>
 </div>
-<!-- The journey-->
-<div id="journey" class="tab" style="display:none">
-<div class="w3-panel">
-<div class="main-title">
-<p><h1><span>The journey</span></h1></p>
-</div>
-<p>How governments get to better delivery.</p>
-<p>Video is from another theme and is added as an example as YouTube is easier to embed.</p>
-<div class="video-wrapper" > 
-<p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
-</div>
-<div class="make-your-own-choices"> <p></p>
-<p><h2">Interactive game</h2> is from another theme (setting objectives) and is added as an example.</p><p></p>
-
-  <script async type="text/javascript"> !function () { if (window.JOONBOT_WIDGET_ID) { console.warn("Joonbot snippet included twice"); } else { window.JOONBOT_MODE = "embed"; window.JOONBOT_WIDGET_ID = "42ee6d81-e0bf-4c05-9baa-22af65d5e6db"; var n, o; o = document.createElement("script"); o.src = "https://js.joonbot.com/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous"; n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n); } }() </script> <div id="joonbot-embed" style="background-color:lightgrey;width: 550px; height: 300px; border: 4px solid #05f1da ; margin: auto;"></div>
-  
-</div>
-<p>Perspectives from our panelists</p>
-
-<div class="container-journeys">
-
-        <section class="child-journeys" id="jo1" ><h1 class="white-text">George Werner, former Minister for Education in Liberia</h1>
-            <p>picture</p>
-            <p><b>“Given very tight resources, governments cannot deliver alone [so they must act through] co-delivery with communities”</b> [...] “[You need] government intervention where you want to ensure equity across the board.”  </p>
-            <p><b>“There is no way you can innovate without disrupting the status quo.</b> You have to convince yourself as a public administrator that you cannot respond as usual... look at the health sector, where we disrupted regulations to come up with vaccines in no time. [...] Yet there is controversy when you want to improve learning outcomes. [Education] is politicized in a different way than health ...” </p>
-            <p><b>There isn’t much time for decisionmakers to make bold decisions in government.</b> I was lucky to have political leadership in the process. In West Africa there are public-private partnerships including in Ghana. In government, we need to identify and negotiate with change agents. In education, measurement and change takes time, and you can’t point to a physical bridge that you built within a political cycle. </p>
-            <div class="arrow-right"><p></p>
-            </div>
-        </section>
-        
-        <section class="child-journeys" id="jo2"><h1>Molly Morgan Jones, British Academy</h1>
-            <p>picture</p>
-            <p>“Dimensions of place, scale, and time must be considered as we rebuild after COVID. [… we should pursue] integrated approaches, integrated solutions. Multilevel governance structures […] strengthen our capacity to identify and respond to local needs. </p>
-            <p>Local and community knowledge is really vital to respond to local needs. Looking to conditions within our communities having the right framework in place from the national level downwards to implement with people with expertise on the ground … from the bottom up. [The center needs to delegate] greater responsibility to act at lower levels. “ </p>
-           
-        </section>
-        <section class="child-journeys" id="jo3"><h1>Clement Uwajeneza, Public.digital</h1>
-            <p>picture</p>
-            <p>“Government is wired in a way that failure is not acceptable [...] You have to accept that most attempts at reform will fail." Why? Governments don’t innovate and are expensive ways to get things done. Creative partnering can help.  </p>
-        </section>
-        <section class="child-journeys" id="jo4"><h1>Eden Getachew, TB-IGC </h1>
-            <p>picture</p>
-            <p>TRANSLITERATE. Formal delivery models can help. It is a halfway house [to whole of government transformation], you can start with small things before disseminating innovations in a phased way through the system. Public services have been in place for hundreds of years, so resistance to new ways is expected. But embedding new ways of doing things is hard. </p>
-        </section>
-        
-    </div>
-    </div>
-</div>
 <!--Choices and conundrums-->
 
 <div id="candc" class="tab" style="display:none">
@@ -599,9 +588,10 @@ Is it the fault of the non-state sector? </span></p>
         <p><h1><span>Choices and conundrums</span></h1></p>
         </div>
     <p>While trying to improve delivery, governments face <b>a series of tradeoffs and problems to address.</b></p>
-    <p>[Note that the panel below could be expanded to take the entire screen with the navigation tools redrawn at the top or side of the page. The arrows currently are not clickable but will be.]</p>
-    
-    <div class="container-conundrums">
+    <p>The previous carousel panel has been removed due to WB advice. Looking at new visualisations. It is likely to comntain text based on the choices and conundrums section of the main report. Ideas about how to illustrate this using the Flourish visualisations welcome.</p>
+    <div class="sub-title">Choices</div><p>See example visualization below".</p>
+    <div class="viz"><div class="flourish-embed flourish-hierarchy" data-src="visualisation/8868072"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
+    <div class="container-conundrums" style="display:none">
 
         <section class="child-conundrums" id="con1" ><h1 class="white-text">Delivery through regulation and influencing.</h1>
             <p></p>
@@ -712,12 +702,50 @@ Is it the fault of the non-state sector? </span></p>
         </div>
     
     <p>Video extracts from the conversations, with cases at the country/regional level etc</p>
-    <p>The below buttons have not been programmed. Map controls (clicking on the shape then on the hyperlink for) ECA, Malaysia, Indonesia and EAP, will work.</p>
-    <p>the map will be colorized according to available stories.</p> 
+    <div></div>
+    <div class="sub-title"><p><span>Perspectives on delivery from our panelists</span></p></div>
+
+<div class="container-journeys" style="display:none">
+
+        <section class="child-journeys" id="jo1" ><h1 class="white-text">George Werner, former Minister for Education in Liberia</h1>
+            <p>picture</p>
+            <p><b>“Given very tight resources, governments cannot deliver alone [so they must act through] co-delivery with communities”</b> [...] “[You need] government intervention where you want to ensure equity across the board.”  </p>
+            <p><b>“There is no way you can innovate without disrupting the status quo.</b> You have to convince yourself as a public administrator that you cannot respond as usual... look at the health sector, where we disrupted regulations to come up with vaccines in no time. [...] Yet there is controversy when you want to improve learning outcomes. [Education] is politicized in a different way than health ...” </p>
+            <p><b>There isn’t much time for decisionmakers to make bold decisions in government.</b> I was lucky to have political leadership in the process. In West Africa there are public-private partnerships including in Ghana. In government, we need to identify and negotiate with change agents. In education, measurement and change takes time, and you can’t point to a physical bridge that you built within a political cycle. </p>
+            <div class="arrow-right"><p></p>
+            </div>
+        </section>
+        
+        <section class="child-journeys" id="jo2"><h1>Molly Morgan Jones, British Academy</h1>
+            <p>picture</p>
+            <p>“Dimensions of place, scale, and time must be considered as we rebuild after COVID. [… we should pursue] integrated approaches, integrated solutions. Multilevel governance structures […] strengthen our capacity to identify and respond to local needs. </p>
+            <p>Local and community knowledge is really vital to respond to local needs. Looking to conditions within our communities having the right framework in place from the national level downwards to implement with people with expertise on the ground … from the bottom up. [The center needs to delegate] greater responsibility to act at lower levels. “ </p>
+           
+        </section>
+        <section class="child-journeys" id="jo3"><h1>Clement Uwajeneza, Public.digital</h1>
+            <p>picture</p>
+            <p>“Government is wired in a way that failure is not acceptable [...] You have to accept that most attempts at reform will fail." Why? Governments don’t innovate and are expensive ways to get things done. Creative partnering can help.  </p>
+        </section>
+        <section class="child-journeys" id="jo4"><h1>Eden Getachew, TB-IGC </h1>
+            <p>picture</p>
+            <p>TRANSLITERATE. Formal delivery models can help. It is a halfway house [to whole of government transformation], you can start with small things before disseminating innovations in a phased way through the system. Public services have been in place for hundreds of years, so resistance to new ways is expected. But embedding new ways of doing things is hard. </p>
+        </section>
+        
+    </div>
+    <div class="empty" style="border: 4px solid #05f1da ; "> 
+    <div class="flourish-embed flourish-cards" data-src="visualisation/8868969" style="margin:auto;"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    </div>
+    
+    <div class="sub-title"><p><span>Blogs</span></p></div>
+    
+    <p><a class="orange" data-text="How officials can do better at delivering services to citizens" href="https://blogs.worldbank.org/governance/how-officials-can-do-better-delivering-services-citizens" target="_blank" tabindex="0"><span>How officials can do better at delivering services to citizens</span></a></p>
+    
+    <p><div class="sub-title"><span>Cases</span></div></p><p>Controls (clicking on the shape then on the hyperlink for) ECA, Malaysia, Indonesia and EAP, will work.</p>
+    <p>The map will be colorized according to available stories. </p><p>Any navigation element like this would require a accessible alternative method of navigation.</p> <p>The below buttons have not been programmed.</p>
     <!--Stories-text--> 
     
     <div class="button-container" style="display:block">
-    <!-- not ucrrently in use-->
+    <!-- not currently in use-->
     <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Education stories')">Education</button>
     <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Climate stories')">Climate</button>
     </div>
