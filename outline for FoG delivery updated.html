@@ -216,7 +216,7 @@ div.navpanel-1,
         border: solid 2px #05F1DA;
     }
     
-    div.navpanel-1 {
+div.navpanel-1 {
         min-width: 50vw;
         max-width: 600px;
         height: 100px;
@@ -336,7 +336,7 @@ content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
 
 ul {
   list-style-image: url('https://ibb.co/5nrtF4r'); 
-  /* needs work. this is the FoG logo */
+  /* needs work. this is the FoG logo to be used as a bullet point. Not used in body yet */
 }
 
 .conundrum-img {
@@ -352,6 +352,9 @@ display: flex ;
 min-width: 50vw;
   border: 5px solid #05F1DA;
   padding-top: 18px;
+}
+div.make-your-own-choices {
+min-height: 300px ; 
 }
 
 div.viz {
@@ -551,6 +554,12 @@ Is it the fault of the non-state sector? </span></p>
 <p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 </div>
+<div class="make-your-own-choices"> <p></p>
+<p><h2">Interactive game</h2> is from another theme (setting objectives) and is added as an example.</p><p></p>
+
+  <script async type="text/javascript"> !function () { if (window.JOONBOT_WIDGET_ID) { console.warn("Joonbot snippet included twice"); } else { window.JOONBOT_MODE = "embed"; window.JOONBOT_WIDGET_ID = "42ee6d81-e0bf-4c05-9baa-22af65d5e6db"; var n, o; o = document.createElement("script"); o.src = "https://js.joonbot.com/init.js", o.defer = !0, o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous"; n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n); } }() </script> <div id="joonbot-embed" style="background-color:lightgrey;width: 550px; height: 300px; border: 4px solid #05f1da ; margin: auto;"></div>
+  
+</div>
 <p>Perspectives from our panelists</p>
 
 <div class="container-journeys">
@@ -611,7 +620,7 @@ Is it the fault of the non-state sector? </span></p>
         </section>
   
         <section class="child-conundrums" id="con3"><h1>Enforcement, or influencing and cajoling</h1>
-            <p>Often, to get something done, governments need changes from citizens and non-state actors. They might rope in communities to support government interventions through cooperative action, co-financing, monitoring government employees' actions.</p>
+            <p>Often, to get something done, governments need changes from citizens and non-state actors. They might rope in communities to support government interventions through cooperative action, co-financing, and monitoring government employees' actions.</p>
             <p> Alternatively, and often more effectively, governments can cajole changes in behavior through providing information to and making non-binding requests of citizens. <p>Often, the government cajoles, provides, and coerces all at once. Examples of successful behavior include campaigns against smoking, where citizens are encouraged by a combination of government measures (such as tax, advertising and subsidised treatment) to stop. There are examples in the health sector at all levels of income where Governments, sectors within those governments, with less experience of policy coherence, and perhaps those governments who do not make a conscious effort to deliver across bureaucratic silos, will struggle to act across several modes. </p>
         </section>
   
@@ -703,8 +712,8 @@ Is it the fault of the non-state sector? </span></p>
         </div>
     
     <p>Video extracts from the conversations, with cases at the country/regional level etc</p>
-    <p>The below buttons have not been programmed. Map controls ECA, Malaysia, Indonesia and EAP will work.</p>
-    <p>the map will be colorized according to available stories"</p> 
+    <p>The below buttons have not been programmed. Map controls (clicking on the shape then on the hyperlink for) ECA, Malaysia, Indonesia and EAP, will work.</p>
+    <p>the map will be colorized according to available stories.</p> 
     <!--Stories-text--> 
     
     <div class="button-container" style="display:block">
@@ -791,7 +800,7 @@ function openStory(storyName) {
   /*evt.currentTarget.className += " w3-selected";*/
 }
 
-/* add an event listener and handshake here"*/
+/* please add an event listener and handshake here to avoid too many triggers for storyName. I have provided the next line but failed to make it work."*/
 /* if (window.onmessage.origin == "https://flo.uri.sh") { */
 window.onmessage = function(e) {
 
