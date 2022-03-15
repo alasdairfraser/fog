@@ -232,8 +232,8 @@ div.navpanel-1,
     
 div.navpanel-1 {
         min-width: 50vw;
-        max-width: 600px;
-        height: 100px;
+        max-width: 790px;
+        height: 70px;
         display: none;
         background: white;
     }
@@ -267,7 +267,7 @@ div.navpanel-1 {
 }
 
 .button-big {
-font-size: 120% ; 
+font-size: 100% ; 
 margin-bottom: 2px;
 text-decoration-line : underline; 
 }
@@ -306,6 +306,7 @@ content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo
   scroll-snap-type: x mandatory;
   min-width: 50vw;
   max-width: 600px;
+  max-height: 500px;
   margin: auto; padding: 3% ; 
   display: flex;
   -webkit-overflow-scrolling: touch;
@@ -416,11 +417,15 @@ background-color: #de058b ;
     <!-- make button -->
     <div class="button-container">
     <!-- insert links when ready-->
-        <div class="button-main-menu"><span><a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1">Main page</a></span></div>  
-        <div class="button-main-menu"><span><a href="#top">Role</a></span></div>
+        <div class="button-main-menu"><span><a href="https://dl.dropboxusercontent.com/s/wx4e8twtjp6y36v/top-page.html?dl=1"  id="green" style="background-color: #05f1da !important;">Home</a></span></div>  
+        <div class="button-main-menu"><span><a href="#top">Know where you are & why</a></span></div>
+        <div class="button-main-menu"><span><a href="#top">The destination, pathways, & route</a></span></div>
+        <div class="button-main-menu"><span><a href="#top">Take steps, look, learn & adjust</a></span></div>
+        <div class="button-main-menu"><span><a href="#top">Role of government</a></span></div>
         <div class="button-main-menu"><span><a href="#top">Productivity</a></span></div>
-        <div class="button-main-menu"><span><a href="#top">Delivery</a></span></div>
-        <div class="button-main-menu"><span><a href="#top">Trust</a></span></div><p><span></span>Can be on left, but reduces "columns" for the rest of the content.</p>
+        <div class="button-main-menu" id="green" style="background-color: #05f1da !important;"><span><a href="#top">Delivery</a></span></div>
+        <div class="button-main-menu"><span><a href="#top">Trust</a></span></div>
+        <div class="button-main-menu"><span><a href="#top">Catalysts & opportunities</a></span></div>
     </div>
     </div>
     <br>
@@ -442,10 +447,11 @@ background-color: #de058b ;
     <div class="close-panel"></div>
 <div class="button-container">
 
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'theme-home')">The Journey</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'theme-home')">The journey</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'bttf')">Back to the Future</button>
-  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Conversations and Cases</button>
   <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'candc')">Choices and Conundrums</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'conv')">Conversations</button>
+  <button class="w3-bar-item button tablink button-big" onclick="openTab(event,'story')">Cases</button>
 
 </div>
 </div>
@@ -460,7 +466,7 @@ background-color: #de058b ;
 “Delivery” </b>
 is about how a government actually implements its policies.
 </p>
-<p>Top Image with waymark/drop-point.</p>
+<p>Top Image with waymark/drop-point to tell readers where they are in the story.</p>
 <div id="column-centre" style="   width: 959px; margin: 0 auto; "><div class="row">
   <div class="column">
 <div class="sub-title">
@@ -478,7 +484,9 @@ is about how a government actually implements its policies.
 </div>
 </div>
 </div>
-<p>How governments get to better delivery.</p>
+<div class="sub-title">
+<p><span>How governments could improve delivery</span></p>
+</div>
 <p>Video is from another theme. The video placed here will be based on an extract of the cartoon.</p>
 <div class="video-wrapper" > 
 <p align="center"><iframe width="561" height="316" src="https://www.youtube.com/embed/7gcl2j3C5Yc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
@@ -590,10 +598,13 @@ Is it the fault of the non-state sector? </span></p>
         <p><h1><span>Choices and conundrums</span></h1></p>
         </div>
     <p>While trying to improve delivery, governments face <b>a series of tradeoffs and problems to address.</b></p>
-    <p>The previous carousel panel has been removed due to WB advice. Looking at new visualisations. It is likely to comntain text based on the choices and conundrums section of the main report. Ideas about how to illustrate this using the Flourish visualisations welcome.</p>
-    <div class="sub-title">Choices</div><p>See example visualization below, which depicts choices.</p>
+
+    <div class="sub-title">Choices</div>
+    <p>An example visualization below, which depicts choices. Panels could be added to this with the cases.</p>
     <div class="viz"><div class="flourish-embed flourish-hierarchy" data-src="visualisation/8868072"><script src="https://public.flourish.studio/resources/embed.js"></script></div></div>
-    <div class="container-conundrums" style="display:none">
+    <div class="sub-title">Conundrums</div>
+    <p>An example set of text, which discusses conundrums.</p>
+    <div class="container-conundrums" style="display:block">
 
         <section class="child-conundrums" id="con1" ><h1 class="white-text">Delivery through regulation and influencing.</h1>
             <p></p>
@@ -605,10 +616,10 @@ Is it the fault of the non-state sector? </span></p>
         </section>
   
         <section class="child-conundrums" id="con2"><h1>Coherent, realistic regulation. </h1>
-            <p> Good regulation is difficult to do and the definition of good regulation is highly contested. </p> 
-                <p>Regulations are often patchy. Poor regulation can be more trouble than its worth, and regulation can provide another way for corrupt officials to extract rent.  It is difficult to sustain government attention or adapt to experience. The temptation to announce what cannot be implemented, and to favor some groups according to political circumstances are all risks for regulation, just as they are for direct provision.  </p> <p></p>
-               <p> <div class="conundrum-quote">[appropriate version of]"<span>All governments lie, but disaster lies in wait for countries whose officials smoke the same hashish they give out." - I.F. Stone, Journalist</span></div></p> <p></p>
-                <p>But some governments are better at regulation than they are at provision. Better regulation, particularly to authorise and to enable beneficial private activities, but also to protect the vulnerable from the excess of private activities, is an opportunity for governments to improve people's lives during tight fiscal conditions. Quality and not just the quantity of </p>
+            <p> Good regulation is difficult to do, and the definition of good regulation is highly contested. </p> 
+                <p>Regulations are often patchy. Depending on externalities of the area regulated, and incentives on the supply side, poor regulation can be more trouble than it's worth, and regulation can provide another way for corrupt officials to extract rent.  It is difficult to sustain government attention or adapt to experience. The temptation to announce what cannot be implemented, and to favor some groups according to political circumstances are all risks for regulation, just as they are for direct provision.  </p> <p></p>
+               <p> <div class="conundrum-quote"><span>"Example quote"</span></div></p> <p></p>
+                <p>But some governments, particularly LICs, are better at regulation than they are at provision (link to WGI data). Better regulation, particularly to authorise and to enable beneficial private activities, but also to protect the vulnerable from the excess of private activities, is an opportunity for governments to improve people's lives during tight fiscal conditions. Quality and not just the quantity of </p>
         </section>
   
         <section class="child-conundrums" id="con3"><h1>Enforcement, or influencing and cajoling</h1>
@@ -627,6 +638,7 @@ Is it the fault of the non-state sector? </span></p>
                 <p>Sometimes, the ‘innovation’ that outsourcing provides, is simply to pay frontline staff less. Contracting-out may be an expensive way to achieve this, and reducing employment quality might have consequences for service quality and wider cohesion. </p>
         </section>
 
+        <!--
         <section class="child-conundrums" id="con6" ><h1 class="white-text">Who delivers?</h1>
             <p></p>
             <div class="arrow-right"><p></p>
@@ -648,12 +660,13 @@ Is it the fault of the non-state sector? </span></p>
         <section class="child-conundrums" id="con10"><h1></h1>
             <p> </p>
         </section>  
+        -->
   
         <section class="child-conundrums" id="con11" ><h1 class="white-text">What level of government can deliver?</h1>
             <p></p>
             <div class="arrow-right"><p></p>
         </div></section>
-
+<!--
         <section class="child-conundrums" id="con12"><h1></h1>
             <p> </p>
         </section>
@@ -669,13 +682,13 @@ Is it the fault of the non-state sector? </span></p>
         <section class="child-conundrums" id="con15"><h1></h1>
             <p> </p>
         </section>
- 
+    -->
         <section class="child-conundrums" id="con16" ><h1 class="white-text">How does delivery happen?</h1>
             <p></p>
             <div class="arrow-right"><p></p>
             </div>
         </section>
- 
+        <!--
         <section class="child-conundrums" id="con17"><h1></h1>
             <p> </p>
         </section>
@@ -691,7 +704,7 @@ Is it the fault of the non-state sector? </span></p>
         <section class="child-conundrums" id="con20"><h1></h1>
             <p> </p>
         </section>
-  
+        --> 
     </div>
     </div>
 </div>
@@ -700,10 +713,54 @@ Is it the fault of the non-state sector? </span></p>
 <div id="story" class="tab" style="display:none">
     <div class="w3-panel">
         <div class="main-title">
-            <p><h1><span>Conversations and cases</span></h1></p>
+            <p><h1><span>Cases</span></h1></p>
+        </div>
+  
+    
+    <p><div class="sub-title"><span>Cases</span></div></p><p>Controls for ECA, Malaysia, Indonesia and EAP, work.</p>
+    <!--<p>The map is difficult to use in the /programs template - assume we can't, unless it links to other webpages. </p><p>In any case, any navigation element like this would require a accessible alternative method of navigation.</p> <p>The below buttons have not been programmed. Show/hide navigation elements are commonly used in the /programs template.</p>-->
+    <!--Stories-text--> 
+    
+    <!-- not currently in use-->
+    <div class="button-container" style="display:block">
+    <!--
+    <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Education stories')">Education</button>
+    <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Climate stories')">Climate</button>
+    </div> -->
+
+    <div class="flourish-embed flourish-map" data-src="visualisation/8780721"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+    
+    <div class="story" id="MYS" style="display:none"><a id="MYS-link" ><span>Text on Malaysia</span></a><br> 
+    <h1><span>Stories on the Future of Government from Malaysia</span></h1><p>text</p>
+    <a class="orange" href="#top"><span>Back to top</span></a></div>
+    
+    <div class="story" id="IDN" style="display:none"><a id="IDN-link"><span>Text on Indonesia</span></a><br>
+    <h1><span>Stories on the Future of Government from Indonesia</span></h1><p>text <span class="lorem">something</span>text</p>
+    <a class="orange" href="#top"><span>Back to top</span></a></div>
+    
+    <div class="story" id="EAP" style="display:none"><a id="EAP-link"><span>Text on EAP</span></a><br>
+    <h1><span>Stories on the Future of Government on EAP</span></h1><p>text <span class="lorem">something</span>text</p>
+    <a class="orange" href="#top"><span>Back to top</span></a>
+    </div>
+    <div class="story" id="ECA" style="display:none"><a id="EAP-link"><span>Text on ECA</span></a><br>
+    <h1><span>Stories on the Future of Government on ECA</span></h1><p>text <span class="lorem">something</span>text</p>
+    <a class="orange" href="#top"><span>Back to top</span></a>
+    </div>    
+      
+      <div class="story-sector" class="stories-ed" style="display:none"> <a id="stories-ed"><span>Text on Education</span></a><br>
+    <h1><span>Stories on the Future of Government on Education</span></h1><p>text <span class="lorem">something</span>text</p>
+    <a class="orange" href="#top"><span>Back to top</span></a></div>
+    </div>
+</div>
+</div>
+<!--Conversations-->
+<div id="conv" class="tab" style="display:none">
+    <div class="w3-panel">
+        <div class="main-title">
+            <p><h1><span>Conversations</span></h1></p>
         </div>
     
-    <p>Video extracts from the conversations, with cases at the country/regional level etc</p>
+    <p>Video and text extracts from the conversations</p>
     <div></div>
     <div class="sub-title"><p><span>Perspectives on delivery from our panelists</span></p></div>
 
@@ -741,41 +798,11 @@ Is it the fault of the non-state sector? </span></p>
     <div class="sub-title"><p><span>Blogs</span></p></div>
     
     <p><a class="orange" data-text="How officials can do better at delivering services to citizens" href="https://blogs.worldbank.org/governance/how-officials-can-do-better-delivering-services-citizens" target="_blank" tabindex="0"><span>How officials can do better at delivering services to citizens</span></a></p>
-    
-    <p><div class="sub-title"><span>Cases</span></div></p><p>Controls for ECA, Malaysia, Indonesia and EAP, work.</p>
-    <p>The map is difficult to use in the /programs template - assume we can't, unless it links to other webpages. </p><p>In any case, any navigation element like this would require a accessible alternative method of navigation.</p> <p>The below buttons have not been programmed. Show/hide navigation elements are commonly used in the /programs template.</p>
-    <!--Stories-text--> 
-    
-    <div class="button-container" style="display:block">
-    <!-- not currently in use-->
-    <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Education stories')">Education</button>
-    <button class="w3-bar-item button storysectorlink" onclick="openStorySector(event,'Climate stories')">Climate</button>
-    </div>
-
-    <div class="flourish-embed flourish-map" data-src="visualisation/8780721"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
-    
-    <div class="story" id="MYS" style="display:none"><a id="MYS-link" ><span>Text on Malaysia</span></a><br> 
-    <h1><span>Stories on the Future of Government from Malaysia</span></h1><p>text</p>
-    <a class="orange" href="#top"><span>Back to top</span></a></div>
-    
-    <div class="story" id="IDN" style="display:none"><a id="IDN-link"><span>Text on Indonesia</span></a><br>
-    <h1><span>Stories on the Future of Government from Indonesia</span></h1><p>text <span class="lorem">something</span>text</p>
-    <a class="orange" href="#top"><span>Back to top</span></a></div>
-    
-    <div class="story" id="EAP" style="display:none"><a id="EAP-link"><span>Text on EAP</span></a><br>
-    <h1><span>Stories on the Future of Government on EAP</span></h1><p>text <span class="lorem">something</span>text</p>
-    <a class="orange" href="#top"><span>Back to top</span></a>
-    </div>
-    <div class="story" id="ECA" style="display:none"><a id="EAP-link"><span>Text on ECA</span></a><br>
-    <h1><span>Stories on the Future of Government on ECA</span></h1><p>text <span class="lorem">something</span>text</p>
-    <a class="orange" href="#top"><span>Back to top</span></a>
-    </div>    
+    <!--Stories-text-->
       
-      <div class="story-sector" class="stories-ed" style="display:none"> <a id="stories-ed"><span>Text on Education</span></a><br>
-    <h1><span>Stories on the Future of Government on Education</span></h1><p>text <span class="lorem">something</span>text</p>
-    <a class="orange" href="#top"><span>Back to top</span></a></div>
     </div>
 </div>
+
 <!--image-->
 <img src="https://i.ibb.co/F3Z68x0/wbfoglogo-1.png" alt="wbfoglogo-1" class="conundrum-img">
 
